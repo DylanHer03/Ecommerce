@@ -1,0 +1,51 @@
+  <form>
+      <div class="form-group">
+        <label for="exampleInputEmail1">ImagePath</label>
+        <input type="text" class="form-control" id="img" aria-describedby="img" placeholder="insert img path">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Title</label>
+        <input type="text" class="form-control" id="title" placeholder="insert title">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1">Description</label>
+        <input type="text" class="form-control" id="description" aria-describedby="description" placeholder="Insert description">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1">Price</label>
+        <input type="number" class="form-control" id="price" aria-describedby="price" placeholder="Insert price">
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    {{# each products}}
+        {{# each this }}
+      <div  class="col-s7">
+        <table >
+            <thead> 
+                <tr> 
+                <th>Title</th>
+                <th>Img</th>
+                <th>Description</th>
+                <th>Price</th>     
+                </tr> 
+            </thead>
+            <tbody>
+                    <tr>
+                      <td>{{this.title}}</td>
+                      <td>{{this.price}}</td>
+                      <td><img src="{{this.imagePath}}" height="100" width="auto"></td>
+                      <td>{{this.price}}</td>
+                        <td>
+                         <button className="btn light-blue darken-4">
+                            <i className="material-icons">delete</i>
+                              </button>
+                               <button >
+                            <i className="material-icons">edit</i>
+                              </button>
+                        </td>
+                    </tr>
+              </tbody> 
+        </table> 
+      </div>
+      {{/each}}
+    {{/each}}

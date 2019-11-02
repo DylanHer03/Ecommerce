@@ -1,0 +1,36 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="/">Navbar</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+      </li>
+    </ul>
+          <div class="nav-item">
+              <a class="nav-link" href="/shopping-cart/">
+                <i class="fas fa-shopping-basket"></i> Shopping Cart
+                <span  class="badge badge-primary">{{session.cart.totalQty}}</span>
+              </a>
+         </div>
+               <div class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="fas fa-user"></i>  User Management
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          {{# if login}}
+          <a class="dropdown-item" href="/user/profile"><i class="fas fa-user-circle"></i> User Account</a>
+          <a class="dropdown-item" href="/user/logout"><i class="fas fa-sign-out-alt"></i>  Logout</a>
+          <a class="dropdown-item" href="/dati/"><i class="fas fa-database"></i>  Data</a>
+               {{else}}
+          <a class="dropdown-item" href="/user/signup">Sign Up</a>
+          <a class="dropdown-item" href="/user/signin">Sign In</a>
+          {{/if}}
+
+        </div>
+      </div>
+  </div>
+</nav>
